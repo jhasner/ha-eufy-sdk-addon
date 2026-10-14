@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.6.0-dev.1
+
+- Rebuild from the current bridge `:dev`: **bridge 0.5.0 on the newest eufy-sdk beta (`0.5.0-beta.x`)**,
+  which brings everything in the stable add-on 0.6.0 (stable bridge ID so the same bridge isn't configured
+  twice, HomeBase 2 "Last event" covers, the Refresh Last Event timeout fix, newest image wins, mains
+  cameras keep streaming), plus the SDK beta line beyond 0.4.0. Pair it with **integration 0.5.1**.
+
 ## 0.5.0-dev.1
 
 - Rebuild from the current bridge `:dev`. The previous dev image ran bridge 0.3.0 on eufy-sdk
