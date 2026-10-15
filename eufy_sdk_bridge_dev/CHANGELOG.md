@@ -1,5 +1,13 @@
 # Changelog
 
+## 0.6.0-dev.3
+
+- Rebuild from the current bridge `:dev`, picking up:
+  - **No more auth tokens in logs or error messages.** eufy echoes the account's token in some errors (e.g. a
+    refused RTC sign); the bridge now redacts it from its log, HTTP and WebSocket output.
+  - **A WebRTC check at startup.** The log says whether `node-datachannel` (needed by a HomeBase S1 Pro /
+    T9000) loads on this platform, and which prebuilt build it uses (e.g. `linux-arm64-musl`).
+
 ## 0.6.0-dev.2
 
 - Rebuild from the current bridge `:dev`, which now ships **`node-datachannel`**, the native WebRTC library a
