@@ -1,5 +1,15 @@
 # Changelog
 
+## 0.6.0-dev.2
+
+- Rebuild from the current bridge `:dev`, which now ships **`node-datachannel`**, the native WebRTC library a
+  **HomeBase S1 Pro (T9000)** needs. Before this, every T9000 command and live view failed with "needs the
+  optional peer dependency 'node-datachannel'" (#46). Prebuilt for both amd64 and arm64 (Raspberry Pi).
+  - Note: some accounts still hit an **RTC sign refused (HTTP 401)** before the library is reached; that's an
+    SDK fix in progress (mega-yfue/eufy-sdk#422).
+- Stream failures now say **why** they failed in the log (e.g. the RTC sign refusal), instead of always
+  "P2P unreachable".
+
 ## 0.6.0-dev.1
 
 - Rebuild from the current bridge `:dev`: **bridge 0.5.0 on the newest eufy-sdk beta (`0.5.0-beta.x`)**,
