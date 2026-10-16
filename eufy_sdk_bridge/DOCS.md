@@ -55,7 +55,7 @@ Your main account stays free for the eufy app on your phone.
 | `password` | — | eufy account password |
 | `country` | `GB` | Two-letter country code — routes the eufy region |
 | `poll_ms` | `600000` | How often the bridge re-reads device state from the cloud (ms); `0` disables polling |
-| `stream_idle_ms` | `300000` | Auto-off a camera's live feed after this long with no detection (ms); `0` disables. Saves battery |
+| `stream_idle_ms` | `300000` | Auto-off a **battery** camera's live feed after this long with no detection (ms); `0` disables. Saves battery. Mains cameras keep streaming |
 | `rtsp_idle_off_ms` | `300000` | Turn a **battery** camera's native `rtspStream` OFF after this long idle (ms); `0` disables. Wired cameras untouched |
 | `stream_battery_budget_ms` | *(empty)* | How long a **battery** camera may stream continuously (ms). Empty keeps the SDK default (45 s + 10 s grace), so a watched stream drops every ~55 s. Raise it (e.g. `180000`) to keep it up. Mains cameras ignore it |
 | `stream_fail_backoff_ms` | *(empty)* | Battery-saver: after a live-stream open **fails**, refuse to reopen that camera for this long (ms), doubling per consecutive failure up to 5 min, so go2rtc's retries get a fast error instead of waking the camera. Empty keeps the bridge default (`30000`); `0` disables |
@@ -75,3 +75,10 @@ Your main account stays free for the eufy app on your phone.
 The tuning options mirror the bridge's own defaults, so leaving them unchanged behaves exactly as
 before. The login token persists in the add-on's `/data`, so a restart does not re-authenticate (eufy
 allows one active session per account; a session bumped elsewhere re-authenticates, escalating to 2FA).
+
+## Troubleshooting
+
+Stream keeps restarting, a change says OK but nothing happens, no devices, repeated 2FA codes, no
+events: see the bridge's
+[troubleshooting guide](https://github.com/mega-yfue/ha-eufy-sdk-bridge/blob/main/docs/troubleshooting.md).
+It also lists what to include when reporting a problem.
