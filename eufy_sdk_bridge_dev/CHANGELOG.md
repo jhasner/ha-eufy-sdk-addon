@@ -1,5 +1,12 @@
 # Changelog
 
+## 0.7.0-dev.1
+
+- Rebuild from the current bridge `:dev`: **bridge 0.6.0 on the newest eufy-sdk beta (`0.5.0-beta.x`)**,
+  which brings everything in the stable add-on 0.7.0 (the camera power tier the integration uses to keep
+  battery cameras away from HA's stream worker, and the "Last event" cover log line). Pair it with
+  **integration 0.6.0**.
+
 ## 0.6.0-dev.3
 
 - Rebuild from the current bridge `:dev`, picking up:
