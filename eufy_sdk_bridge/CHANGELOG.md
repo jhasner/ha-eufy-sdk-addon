@@ -1,5 +1,18 @@
 # Changelog
 
+## 0.7.0
+
+- Built on **bridge 0.6.0** (still eufy-sdk 0.4.0). For the add-on, this means:
+  - **HomeBase S1 Pro (T9000) can start its WebRTC connection.** The image now ships `node-datachannel`,
+    prebuilt for amd64 and arm64 (Raspberry Pi). Some accounts still hit an RTC sign refusal (HTTP 401)
+    first; that's an SDK fix in progress.
+  - **No more auth tokens in logs or error messages**: a token eufy echoes back is redacted.
+  - **Battery cameras stop draining from Home Assistant's stream worker** together with **integration
+    0.6.0**: the bridge now tells the integration which cameras are on battery, so mains cameras keep HLS.
+  - **Clearer logs**: a failed stream says why, startup reports whether the WebRTC library loads, and a
+    "Last event" cover in a format the SDK can't decode yet is logged instead of looking like no reply.
+- No new options. Pair it with **integration 0.6.0**.
+
 ## 0.6.0
 
 - Built on **bridge 0.5.0** (still eufy-sdk 0.4.0). For the add-on, this means:
