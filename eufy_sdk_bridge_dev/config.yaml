@@ -54,6 +54,7 @@ options:
   debug: false
   debug_p2p: false
   go2rtc_enable: true
+  local_event_refresh: true
   # ── Anker Solix (optional; a SEPARATE Anker account from eufy) ──────────────────────────────────
   # Leave email + password empty to keep Solix OFF. Fill BOTH to add the Solarbank / smart-meter
   # entities. The rest mirror the bridge defaults, so leaving them is a no-op.
@@ -99,6 +100,10 @@ schema:
   # Run the bundled go2rtc process. Turn OFF if you run go2rtc as a separate container/service
   # on the same host (ports 8554/1984), so the bundled one does not clash with it.
   go2rtc_enable: bool
+  # Refresh the "Last event" cover + face names from HomeBase/local storage over P2P. Turn OFF for a
+  # camera with no readable local storage (e.g. a standalone mains Floodlight, no HomeBase): those
+  # queries return nothing yet hammer the camera with ~26 P2P requests per detection. See bridge #139.
+  local_event_refresh: bool
   # Anker Solix account (separate from eufy). Fill BOTH email + password to enable Solix; empty = off.
   solix_email: "str?"
   solix_password: "password?"
