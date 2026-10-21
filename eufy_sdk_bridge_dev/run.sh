@@ -42,6 +42,7 @@ clip_ms="$(jq -r '.clip_settle_ms // empty' "$OPTS")"
 [ "$(jq -r '.debug_p2p // false' "$OPTS")" = "true" ] && export BRIDGE_DEBUG_P2P=1
 # Bundled go2rtc is on by default; only pass the override when the user turns it off.
 [ "$(jq -r '.go2rtc_enable // true' "$OPTS")" = "false" ] && export GO2RTC_ENABLE=0
+[ "$(jq -r '.local_event_refresh // true' "$OPTS")" = "false" ] && export EUFY_LOCAL_EVENT_REFRESH=0
 
 # Optional Anker Solix (a SEPARATE Anker account from eufy). Empty email/password ⇒ Solix stays off
 # (the bridge enables it only when BOTH are set). Empty country ⇒ the bridge falls back to EUFY_COUNTRY.
